@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap');
 
 
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+
 body {
     margin: 0;
     background: #4776E6;
@@ -24,7 +30,17 @@ body {
     justify-content: space-around;
 }
 
-.rows{
-    border: solid 1px black;
+#container {
+    margin: 150px;
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-gap: 1em;
+}
+
+.grid-item {
+    padding: 1em;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
