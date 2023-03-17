@@ -6,7 +6,6 @@ const button = document.getElementById('button');
 function makeRows(rows, cols) {
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
-
   for (let i = 0; i < (rows * cols); i++) {
     let cell = document.createElement('div');
     cell.textContent = i + 1;
@@ -24,15 +23,11 @@ grid.addEventListener("mouseover", function (event) {
   event.target.classList.replace("grid", "color");
 });
 
-function askGrid(){
-  let n = prompt("How many squares?: ")
-  return n
-}
 
-let x = askGrid();
+let userInput = prompt('number: ');
 
+makeRows(userInput, userInput);
 
-makeRows(x, x);
 button.addEventListener('click', () => askGrid());
 
 
