@@ -20,17 +20,19 @@ grid.addEventListener("mouseover", function (event) {
 });
 
 
+//select slider
+const slider = document.getElementById('slider');
 
-//button grid
-const number = document.getElementById('number');
-const button = document.getElementById('button');
+slider.addEventListener('mouseup', function () {
+  grid.innerHTML = "";
+  document.getElementById('value').innerHTML = slider.value + " x " + slider.value;
+  let input = slider.value;
+  makeRows(input, input)
+});
 
-button.addEventListener("click", function () {
+//default grid
+makeRows(12, 12)
 
-  let userInput = number.value;
-  makeRows(userInput, userInput);
-
-}, false);
 
 
 
